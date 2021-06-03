@@ -48,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   showDialog(
                     context: context,
+                    barrierDismissible: false,
                     builder: (_) {
                       return AlertDialog(
                         title: Text("This is the title"),
@@ -123,12 +124,13 @@ class _MyHomePageState extends State<MyHomePage> {
                             title: Text("This is the title"),
                             content: Text("This is the content"),
                             actions: [
-                              CupertinoButton(
+                              CupertinoDialogAction(
                                   child: Text('Cancel'),
+                                  isDestructiveAction: true,
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   }),
-                              CupertinoButton(
+                              CupertinoDialogAction(
                                 child: Text('OK'),
                                 onPressed: () {
                                   print('OK');
